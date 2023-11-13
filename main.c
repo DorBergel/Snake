@@ -11,6 +11,12 @@ int snakeX, snakeY, fruitX, fruitY, direction;
 
 void drawBoundaries()
 {
+
+    /*
+    This function draws the boundries of the game and all the objects
+    Input: None
+    Output: None
+    */
     system("CLS");
     for (i = 0; i < HEIGHT; i++)
     {
@@ -37,6 +43,12 @@ void drawBoundaries()
 
 void initialize()
 {
+
+    /*
+    This function intialize all the global variables
+    Input: None
+    Output: None
+    */
     gameOver = 0;
     snakeX = WIDTH / 2;
     snakeY = HEIGHT / 2;
@@ -52,6 +64,12 @@ void initialize()
 
 void getInput()
 {
+
+    /*
+    This function resolve the pressed key to direction
+    Input: None
+    Output: None
+    */
     if (_kbhit())
     {
         switch (_getch())
@@ -77,6 +95,12 @@ void getInput()
 
 void engine()
 {
+
+    /*
+    This function change snake's coordinate by direction and init new fruit if eat.
+    Input: None
+    Output: None
+    */
     Sleep(100);
 
     switch (direction)
@@ -119,7 +143,7 @@ void engine()
 
 int main()
 {
-    initialize(); // Added initialization
+    initialize();
     while (!gameOver)
     {
         drawBoundaries();
